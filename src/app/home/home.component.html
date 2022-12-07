@@ -1,0 +1,37 @@
+<h2 [ngStyle]="stylevalue">{{ headers.toUpperCase() }}</h2>
+
+<!-- interpolation (data binding)style binding -->
+<!-- <h2 [style.color]="colorname" [style.font-size]="font">
+  My salary is {{ salary | percent }}
+</h2> -->
+
+<!-- Using Attribute directive
+<h2 [ngClass]="classname">My salary is {{ salary | percent }}</h2> -->
+
+<br />
+
+<h2 *ngIf="salary > 0" [ngClass]="classname">
+  My salary is {{ salary | percent }}
+</h2>
+
+<button (click)="Functionclick('click here')">Click me</button>
+
+<br />
+
+<br />
+
+<input [disabled]="isdisable" #txt (change)="Functionclick(txt.value)" />
+
+<input
+  [value]="isdisable"
+  [disabled]="isdisable"
+  #txt
+  (change)="Functionclick(txt.value)"
+/>
+<br />
+
+<input [(ngModel)]="headers" />
+
+<ul>
+  <li *ngFor="let items of colour">{{ items }}</li>
+</ul>
