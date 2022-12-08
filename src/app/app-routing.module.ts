@@ -12,30 +12,29 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'about', component: AboutComponent },
   { path: 'login', component: LoginComponent },
-  { path: '**', component: StatusComponent },
-
   {
     path: 'access',
     loadChildren: () =>
       import('./access/access.module').then((opt) => opt.AccessModule),
   },
   { path: 'contact', component: ContactComponent },
-  // {
-  //   path: 'contact',
-  //   pathMatch: 'full',
-  //   //component: ContactComponent,
-  //   children: [
-  //     { path: '', component: ContactComponent },
+  {
+    path: 'contact',
+    pathMatch: 'full',
+    //component: ContactComponent,
+    children: [
+      { path: '', component: ContactComponent },
 
-  //     { path: 'edit/1', component: AddcontactComponent },
-  //     { path: 'add', component: AddcontactComponent },
-  //     {
-  //       path: 'access',
-  //       loadChildren: () =>
-  //         import('./access/access.module').then((opt) => opt.AccessModule),
-  //     },
-  //   ],
-  // },
+      { path: 'edit/1', component: AddcontactComponent },
+      { path: 'add', component: AddcontactComponent },
+      {
+        path: 'access',
+        loadChildren: () =>
+          import('./access/access.module').then((opt) => opt.AccessModule),
+      },
+    ],
+  },
+  //{ path: '**', component: StatusComponent },
 ];
 
 @NgModule({
