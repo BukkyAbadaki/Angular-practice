@@ -36,7 +36,6 @@ const routes: Routes = [
   },
   //{ path: '**', component: StatusComponent },
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule],
